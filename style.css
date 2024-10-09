@@ -1,0 +1,125 @@
+/* Improved CSS with Updated Color Scheme */
+:root {
+    --primary-color: #e63946;
+    --secondary-color: #1d3557;
+    --background-color: #f1faee;
+    --text-color: #293241;
+    --button-hover-color: #a8dadc;
+    --card-background: #ffffff;
+    --icon-color: #457b9d;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .heading {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--secondary-color);
+  }
+  
+  .heading h2 {
+    font-size: clamp(24px, 3vw, 36px);
+  }
+  
+  /* .services {
+    margin-top: 2rem;
+  } */
+  
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .col i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--icon-color);
+    transition: color 0.3s ease;
+  }
+  
+  .col:hover i {
+    color: var(--primary-color);
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .row {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .col {
+      padding: 15px;
+    }
+    
+    button {
+      font-size: 12px;
+    }
+  }
+  
+  /* Additional styles for better contrast and readability */
+  .col[data-service="universal-emergency"] i,
+  .col[data-service="police"] i,
+  .col[data-service="fire-brigade"] i,
+  .col[data-service="ambulance"] i {
+    color: var(--primary-color);
+  }
+  
+  .col[data-service="universal-emergency"] button,
+  .col[data-service="police"] button,
+  .col[data-service="fire-brigade"] button,
+  .col[data-service="ambulance"] button {
+    background-color: var(--secondary-color);
+  }
+  
+  .col[data-service="universal-emergency"] button:hover,
+  .col[data-service="police"] button:hover,
+  .col[data-service="fire-brigade"] button:hover,
+  .col[data-service="ambulance"] button:hover {
+    background-color: var(--primary-color);
+  }

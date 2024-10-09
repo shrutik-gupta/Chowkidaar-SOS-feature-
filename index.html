@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <script src="app.js" defer></script>
+    <div class="container heading">
+        <h2>Choose an emergency service</h2>
+    </div>
+  <div class="container services">
+    <div class="container text-center">
+      <div class="row row-cols-3 outerService">
+        <div class="col">
+          <i class="fas fa-globe fa-2x"></i>
+          <button onclick="universalEmergency()" class="btn btn-dark">Universal emergency</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-building-shield fa-2x"></i>
+          <button onclick="callEmergencyService('100')" class="btn btn-dark">Police</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-fire-extinguisher fa-2x"></i>
+          <button onclick="callEmergencyService('101')" class="btn btn-dark">Fire Brigade</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-truck-medical fa-2x"></i>
+          <button onclick="callEmergencyService('102')" class="btn btn-dark">Ambulance</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-person-dress fa-2x"></i>
+          <button onclick="callEmergencyService('1091')" class="btn btn-dark">Women’s Helpline</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-child-reaching fa-2x"></i>
+          <button onclick="callEmergencyService('1098')" class="btn btn-dark">Child Helpline</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-person-cane fa-2x"></i>
+          <button onclick="callEmergencyService('1291')" class="btn btn-dark">Senior Citizens Helpline</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-train fa-2x"></i>
+          <button onclick="callEmergencyService('139')" class="btn btn-dark">Railway Helpline</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-skull-crossbones fa-2x"></i>
+          <button onclick="callEmergencyService('1066')" class="btn btn-dark">Anti-Poison Helpline</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-computer fa-2x"></i>
+          <button onclick="callEmergencyService('155260')" class="btn btn-dark">Cyber Crime Helpline</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-gas-pump fa-2x"></i>
+          <button onclick="callEmergencyService('1906')" class="btn btn-dark">LPG Leak Helpline</button>
+        </div>
+        <div class="col">
+          <i class="fas fa-handcuffs fa-2x"></i>
+          <button onclick="callEmergencyService('181')" class="btn btn-dark">Human Trafficking Helpline</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
