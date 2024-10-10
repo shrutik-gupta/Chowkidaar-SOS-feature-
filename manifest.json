@@ -1,0 +1,17 @@
+{
+    "name": "Emergency Services App",
+    "short_name": "Emergency App",
+    "description": "Get quick access to emergency services.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1d3557",
+    "icons": [
+      {
+        "src": "./images/logo.jpg",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+  

@@ -1,5 +1,17 @@
 const email = "shrutikgupta07@gmail.com";
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered:', registration);
+        })
+        .catch(error => {
+          console.error('Service Worker registration failed:', error);
+        });
+    });
+  }
+
 // Function to get the user's current location and send an emergency email
 function getLocationAndSendEmail() {
   if (navigator.geolocation) {
