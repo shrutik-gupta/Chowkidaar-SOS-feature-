@@ -1,10 +1,42 @@
-const email = "example@gmail.com";
+const email = "shrutikgupta07@gmail.com";
 
-// Function to handle emergency button click
-function universalEmergency() {
+// Function to get the user's current location and send an emergency email
+function getLocationAndSendEmail() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+// Callback function when the position is retrieved successfully
+function showPosition(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
   const subject = encodeURIComponent("Emergency");
-  const body = encodeURIComponent("Please assist with an emergency situation!");
+  const body = encodeURIComponent(`Please assist with an emergency situation!\nLocation: https://www.google.com/maps?q=${latitude},${longitude}`);
+  
+  // Sending email with geolocation link
   window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+}
+
+// Handle errors during geolocation fetching
+function showError(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      alert("User denied the request for Geolocation.");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("Location information is unavailable.");
+      break;
+    case error.TIMEOUT:
+      alert("The request to get user location timed out.");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("An unknown error occurred.");
+      break;
+  }
 }
 
 // Function to handle emergency contact dialing
@@ -16,7 +48,8 @@ function callEmergencyService(phoneNumber) {
 document.addEventListener('DOMContentLoaded', () => {
   const universalEmergencyBtn = document.querySelector('button[onclick="universalEmergency()"]');
   if (universalEmergencyBtn) {
-    universalEmergencyBtn.addEventListener('click', universalEmergency);
+    // When the button is clicked, get the location and then send the email
+    universalEmergencyBtn.addEventListener('click', getLocationAndSendEmail);
   }
 
   const emergencyButtons = document.querySelectorAll('button[onclick^="callEmergencyService"]');
